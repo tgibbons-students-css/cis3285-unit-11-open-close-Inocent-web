@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AbstractTrader
 {
-    class TradeProcessorVersion2 : TradeProcessor
+    class TradeProcessorVersion2 : ITradeProcessor
     {
         protected override IEnumerable<string> ReadTradeData(Stream stream)
         {
@@ -41,7 +41,7 @@ namespace AbstractTrader
             }
 
         }
-        public virtual void ProcessTrades(Stream stream)
+        public  void ProcessTrades(Stream stream)
         //public void ProcessTrades(string url)
         {
             var lines = ReadTradeData(stream);
